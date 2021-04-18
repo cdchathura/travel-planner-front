@@ -14,7 +14,7 @@ export class ItinerarySearchComponent implements OnInit {
 
   itineraryForm: FormGroup;
   displayedColumns: string[];
-  dataSource: MatTableDataSource<Itinerary>;
+  dataSource: MatTableDataSource<ItineraryMO>;
   isSubmited: boolean = false;
   error: boolean = false;
   errorMsg: string = "";
@@ -25,7 +25,7 @@ export class ItinerarySearchComponent implements OnInit {
     });
 
     this.displayedColumns = ['city', 'date', 'summary'];
-    this.dataSource = new MatTableDataSource<Itinerary>();
+    this.dataSource = new MatTableDataSource<ItineraryMO>();
   }
 
   ngOnInit(): void {
