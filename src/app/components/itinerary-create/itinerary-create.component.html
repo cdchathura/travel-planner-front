@@ -1,1 +1,57 @@
-<p>itinerary-create works!</p>
+<div class="page-header">
+  Create Itinerary
+</div>
+<div class="page-content">
+  <div class="success" *ngIf="reponseRecieved && !error">
+    {{message}}
+  </div>
+  <div class="alert" *ngIf="reponseRecieved && error">
+    {{message}}
+  </div>
+  <div *ngIf="isSubmited && !itineraryForm.valid " class="inline alert">
+    Please fill required fields!!
+  </div>
+  <div [formGroup]="itineraryForm">
+    <div class="row">
+      <div class="inline">
+        <mat-form-field appearance="fill">
+          <mat-label>Itinerary Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      </div>
+    </div>
+    <div formArrayName="itinerary" *ngFor="let item of itinerary.controls; let i = index">
+      <div [formGroupName]="i">
+        <div class="inline">
+          <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <mat-select formControlName="city">
+              <mat-option *ngFor="let city of cityList" [value]="city.name">
+                {{city.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline">
+          <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="inline">
+          <button type="button" (click)="removeLocation(i)" class="alert">X</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+      <button mat-raised-button color="basic" (click)="addLocation()">Add Location</button>
+    </div>
+
+    <div class="row">
+      <button mat-raised-button color="primary" (click)="submitForm()">Submit</button>
+    </div>
+  </div>
+</div>

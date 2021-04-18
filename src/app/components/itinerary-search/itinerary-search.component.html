@@ -1,1 +1,50 @@
-<p>itinerary-search works!</p>
+<div class="page-header">
+  Itinerary Search
+</div>
+<div class="page-content">
+  <div [formGroup]="itineraryForm">
+    <div class="inline">
+      <mat-form-field appearance="fill">
+        <mat-label>Itinenary Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+    </div>
+
+    <div class="inline">
+      <button mat-raised-button color="primary" (click)="search()">Seacrch</button>
+    </div>
+
+    <div *ngIf="isSubmited && !itineraryForm.valid" class="alert">
+      Itinenary Name is required.
+    </div>
+  </div>
+  <div *ngIf="error" class="alert">
+    {{errorMsg}}
+  </div>
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef> City </th>
+        <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date Time </th>
+        <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="summary">
+        <th mat-header-cell *matHeaderCellDef> Generate Summary </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary" (click)="generateSummary()">Genrate</button> </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+
+</div>
