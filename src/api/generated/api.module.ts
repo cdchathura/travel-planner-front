@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationInterface } from './api-configuration';
 
 import { CityControllerService } from './services/city-controller.service';
-import { BasicErrorControllerService } from './services/basic-error-controller.service';
 import { ItineraryControllerService } from './services/itinerary-controller.service';
 import { WeatherControllerService } from './services/weather-controller.service';
 
@@ -22,7 +21,6 @@ import { WeatherControllerService } from './services/weather-controller.service'
   providers: [
     ApiConfiguration,
     CityControllerService,
-    BasicErrorControllerService,
     ItineraryControllerService,
     WeatherControllerService
   ],

@@ -26,9 +26,9 @@ class WeatherControllerService extends __BaseService {
   }
 
   /**
-   * getWeatherDetailsByCity
+   * Will return weather entries for a given country withing UTC 12 - 18 pm
    * @param city city
-   * @return OK
+   * @return Successful list of entries
    */
   getWeatherDetailsByCityUsingGETResponse(city: string): __Observable<__StrictHttpResponse<WeatherList>> {
     let __params = this.newParams();
@@ -53,9 +53,9 @@ class WeatherControllerService extends __BaseService {
     );
   }
   /**
-   * getWeatherDetailsByCity
+   * Will return weather entries for a given country withing UTC 12 - 18 pm
    * @param city city
-   * @return OK
+   * @return Successful list of entries
    */
   getWeatherDetailsByCityUsingGET(city: string): __Observable<WeatherList> {
     return this.getWeatherDetailsByCityUsingGETResponse(city).pipe(

@@ -26,7 +26,7 @@ class CityControllerService extends __BaseService {
   }
 
   /**
-   * getAll
+   * Returns all the cities which are in city_list.json
    * @return OK
    */
   getAllUsingGETResponse(): __Observable<__StrictHttpResponse<Array<City>>> {
@@ -51,7 +51,7 @@ class CityControllerService extends __BaseService {
     );
   }
   /**
-   * getAll
+   * Returns all the cities which are in city_list.json
    * @return OK
    */
   getAllUsingGET(): __Observable<Array<City>> {

@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page-header {
+  width: 100%;
+  margin-top: 40px;
+  margin-left: 40px;
+  font-weight: bold;
+  font-size: large;
+}
+
+.page-content {
+  width: 100%;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+
+.inline {
+  display: inline-block;
+  margin:10px;
+}
+
+.alert {
+  color: red;
+  margin-left: 10px;
+}
+
+.success {
+  color: green;
+  margin-left: 10px;
+}
+
+.row {
+  margin-top: 20px;
+  height: fit-content;
+}

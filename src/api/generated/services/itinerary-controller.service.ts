@@ -27,7 +27,7 @@ class ItineraryControllerService extends __BaseService {
   }
 
   /**
-   * getItineraryByName
+   * Search itinerary by name
    * @param name name
    * @return OK
    */
@@ -54,7 +54,7 @@ class ItineraryControllerService extends __BaseService {
     );
   }
   /**
-   * getItineraryByName
+   * Search itinerary by name
    * @param name name
    * @return OK
    */
@@ -65,7 +65,7 @@ class ItineraryControllerService extends __BaseService {
   }
 
   /**
-   * saveItinerary
+   * Create itinerary in database
    * @param itinerary itinerary
    * @return OK
    */
@@ -92,7 +92,7 @@ class ItineraryControllerService extends __BaseService {
     );
   }
   /**
-   * saveItinerary
+   * Create itinerary in database
    * @param itinerary itinerary
    * @return OK
    */
